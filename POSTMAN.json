@@ -1,0 +1,154 @@
+{
+	"info": {
+		"_postman_id": "a1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c6d",
+		"name": "RobloxMusic API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Prendas",
+			"item": [
+				{
+					"name": "Listar Prendas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/prendas",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "v1", "prendas"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Prenda por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/prendas/1",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "v1", "prendas", "1"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agregar Prenda",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tipo\": \"Polera\",\n    \"estilo\": \"Anime\",\n    \"nombre\": \"Polera Jojo's Eco\",\n    \"stock\": 10,\n    \"material\": \"Algodon\",\n    \"talla\": \"L\",\n    \"precio\": 9990,\n    \"color\": \"Negro\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/prendas",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "v1", "prendas"]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "Listar Usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/usuarios",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "v1", "usuarios"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Usuario",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Angel\",\n    \"apellido\": \"Amaro\",\n    \"correo\": \"angel@mail.com\",\n    \"numeroCel\": 912345678,\n    \"run\": 21234567,\n    \"dv\": \"k\",\n    \"direccion\": \"Santiago\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/usuarios",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "v1", "usuarios"]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Carritos",
+			"item": [
+				{
+					"name": "Ver Detalle Carrito DTO",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/carritos/1",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "v1", "carritos", "1"]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "API Externa",
+			"item": [
+				{
+					"name": "Consumir Musica Externa",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/musica-externa",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "v1", "musica-externa"]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
