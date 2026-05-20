@@ -1,6 +1,6 @@
-﻿# 🛒 RobloxMusic API — Sistema de Gestión de Tienda y Carritos
+﻿# 🛒 VRK STORE — Sistema de Gestión de Tienda y Carritos
 
-¡Bienvenido al repositorio de **RobloxMusic API**! Este proyecto consiste en el desarrollo de una API REST robusta construida con **Spring Boot**, diseñada para gestionar el inventario de una tienda de ropa para avatares virtuales, administración de usuarios, y la simulación completa de lógica de carritos de compras. 
+¡Bienvenido al repositorio de **VRK STORE**! Este proyecto consiste en el desarrollo de una API REST robusta construida con **Spring Boot**, diseñada para gestionar el inventario de una tienda de ropa, administración de usuarios, y la simulación completa de lógica de carritos de compras. 
 
 Además, incorpora consumo de servicios web externos mediante programación reactiva (`WebClient`) y un sistema centralizado de control de errores.
 
