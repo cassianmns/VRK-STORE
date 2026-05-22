@@ -1,4 +1,4 @@
-package com.duoc.robloxmusic.services;
+package com.duoc.vrk.services;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,9 +9,9 @@ import org.springframework.web.reactive.function.client.WebClient;
 import java.util.List;
 
 @Service
-public class ExternalMusicService {
+public class ExternalVRKService {
 
-    private static final Logger logger = LoggerFactory.getLogger(ExternalMusicService.class);
+    private static final Logger logger = LoggerFactory.getLogger(ExternalVRKService.class);
 
     @Autowired
     private WebClient webClient;

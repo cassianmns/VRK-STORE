@@ -1,7 +1,7 @@
-package com.duoc.robloxmusic.controller;
+package com.duoc.vrk.controller;
 
-import com.duoc.robloxmusic.model.Prenda;
-import com.duoc.robloxmusic.services.prendaService;
+import com.duoc.vrk.model.Prenda;
+import com.duoc.vrk.services.PrendaService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,10 +12,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/prendas")
-public class prendaController {
+public class PrendaController {
 
     @Autowired
-    private prendaService prendaService;
+    private PrendaService prendaService;
 
     @GetMapping
     public ResponseEntity<List<Prenda>> listarPrendas() {

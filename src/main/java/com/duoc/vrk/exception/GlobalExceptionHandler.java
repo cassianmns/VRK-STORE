@@ -1,4 +1,4 @@
-package com.duoc.robloxmusic.exception;
+package com.duoc.vrk.exception;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,17 +1,17 @@
-package com.duoc.robloxmusic.services;
+package com.duoc.vrk.services;
 
-import com.duoc.robloxmusic.model.Prenda;
-import com.duoc.robloxmusic.repository.prendaRepository;
+import com.duoc.vrk.model.Prenda;
+import com.duoc.vrk.repository.PrendaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class prendaService {
+public class PrendaService {
 
     @Autowired
-    private prendaRepository PrendaRepository;
+    private PrendaRepository PrendaRepository;
 
     public List<Prenda> getPrendas() {
         return PrendaRepository.findAll();

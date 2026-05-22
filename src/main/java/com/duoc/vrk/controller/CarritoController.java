@@ -1,6 +1,6 @@
-package com.duoc.robloxmusic.controller;
+package com.duoc.vrk.controller;
 
-import com.duoc.robloxmusic.dto.CarritoDTO;
+import com.duoc.vrk.dto.CarritoDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
@@ -40,6 +40,6 @@ public class CarritoController {
     @PutMapping("/{id}/checkout")
     public ResponseEntity<String> pagarCarrito(@PathVariable int id) {
         log.info("Procesando checkout del carrito: {}", id);
-        return ResponseEntity.ok("Compra realizada con éxito en RobloxMusic.");
+        return ResponseEntity.ok("Compra realizada con éxito en VRK.");
     }
 }

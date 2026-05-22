@@ -1,4 +1,4 @@
-package com.duoc.robloxmusic.dto;
+package com.duoc.vrk.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

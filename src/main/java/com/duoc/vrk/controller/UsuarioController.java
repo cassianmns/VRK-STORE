@@ -1,6 +1,6 @@
-package com.duoc.robloxmusic.controller;
+package com.duoc.vrk.controller;
 
-import com.duoc.robloxmusic.model.Usuario;
+import com.duoc.vrk.model.Usuario;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

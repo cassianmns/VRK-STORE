@@ -1,4 +1,4 @@
-package com.duoc.robloxmusic.dto;
+package com.duoc.vrk.dto;
 
 import lombok.Data;
 import java.util.List;

@@ -1,10 +1,10 @@
-package com.duoc.robloxmusic;
+package com.duoc.vrk;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class RobloxmusicApplicationTests {
+class vrkApplicationTests {
 
 	@Test
 	void contextLoads() {

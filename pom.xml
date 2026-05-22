@@ -8,9 +8,9 @@
 		<version>3.2.5</version> <relativePath/>
 	</parent>
 	<groupId>com.duoc</groupId>
-	<artifactId>robloxmusic</artifactId>
+	<artifactId>vrk</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>robloxmusic</name>
+	<name>vrk</name>
 	<description>API para Roblox Music</description>
 
 	<properties>
