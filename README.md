@@ -51,16 +51,29 @@ cd VRKSTORE
 
 ### 🗄️ 2. Configuración y Despliegue de la Base de Datos (MySQL) con XAMPP
 
-Este proyecto utiliza MySQL para guardar toda la información del inventario y los usuarios de forma automática. Sigue estos pasos para dejar la base de datos lista:
+Este proyecto utiliza MySQL para guardar toda la información del inventario y los usuarios de la tienda de forma automática. Sigue estos pasos para dejar la base de datos lista:
 
-1. **Abrir MySQL:** Abre el XAMPP y haz clic en el botón Start que esta al lado de MySQL 
+1. **Activar el servidor local**
+* Abre el **XAMPP** y haz clic en el botón Start que está al lado del MySQL.
+* La base de datos debe estar en el puerto local estándar `3306`.
 
-2. **Crear la base de datos:** 
-    * Abre tu terminal o consola de comandos conectada a MySQL.
-    * Crea una nueva base de datos llamada `vrk` ejecutando la siguiente consulta:
+2. **Conexión MySQL**
+Si utilizas **MySQL Workbench** para tu base de datos, debes rellenar los siguientes puntos:
+
+* **Connection Name:** El nombre que prefieras para identificarlo.
+* **Connection Method:** Standard (TCP/IP).
+* **Hostname:** 127.0.0.1
+* **Port:** 3306 (puerto por defecto de MySQL).
+* **Username:** root (usuario administrador predeterminado de XAMPP).
+* **Password:** Déjalo completamente vacío.
+
+3. **Crear la base de datos**
+* Abre tu terminal o consola de comandos conectada a MySQL.
+* Crea una nueva base de datos llamada `vrk` ejecutando la siguiente consulta:
 ```bash
 CREATE DATABASE vrk;
 ```
+* Presiona el ícono del **rayo amarillo** en la barra superior para ejecutar el comando.
 
 ### 🚀 3. Ejecución de la API en Visual Studio Code
 
