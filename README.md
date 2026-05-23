@@ -95,9 +95,9 @@ Una vez que tengas MySQL encendido en XAMPP y la base de datos vrk creada, sigue
 [main] INFO  com.duoc.vrk.VrkApplication - Started VrkApplication in X.XXX seconds (JVM running for X.XX)
 ```
 
-Y LISTO!! con eso la API está activa y ejecutándose en `http://localhost:8080`,puedes usar herramientas como Postman para interactuar con los endpoints del inventario y carritos.
+Y LISTO!! con eso la API está activa y ejecutándose en `http://localhost:8080` y las extensiones mencionadas al inicio del README en el apartado `Arquitectura de Endpoints`, puedes usar herramientas como Postman para interactuar con los endpoints del inventario y carritos.
 
----
+--- Se debe importar el archivo `POSTMAN.json` en el programa POSTMAN y se visualizaran las distintas opciones a operar para seguidamente hacer click en Send y que se vea reflejado en el sistema.
 
 ## 👥 Autores (Grupo de Trabajo)
 El desarrollo y diseño arquitectónico de este proyecto fue realizado por estudiantes de la carrera de Ingeniería en Informática de **Duoc UC (Sede San Joaquín)**:
