@@ -41,11 +41,11 @@ Asegúrate de tener instalado lo siguiente:
 * **VS Code** con las extensiones de Java.
 
 ### 🛠️ 1. Clonar el repositorio
-Abre tu terminal (ctrl + ñ) y ejecuta los siguientes comandos:
+Abre tu terminal en VS Code (ctrl + ñ) y ejecuta los siguientes comandos:
 
 ```bash
 # Clona el repositorio
-git clone https://github.com/cassianmn/RobloxMusic.git
+https://github.com/cassianmns/VRK-STORE.git
 cd VRKSTORE
 ```
 
