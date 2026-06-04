@@ -1,6 +1,6 @@
 package com.duoc.vrk.controller;
 
-import com.duoc.vrk.model.Usuario;
+import com.duoc.vrk.model.UsuarioWeb;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,10 +13,10 @@ import java.util.List;
 @RequestMapping("/api/v1/usuarios")
 public class UsuarioController {
     private static final Logger log = LoggerFactory.getLogger(UsuarioController.class);
-    private List<Usuario> usuariosSimulados = new ArrayList<>(); // Simulación rápida para endpoints obligatorios
+    private List<UsuarioWeb> usuariosSimulados = new ArrayList<>(); // Simulación rápida para endpoints obligatorios
 
     @PostMapping
-    public ResponseEntity<Usuario> crearUsuario(@Valid @RequestBody Usuario usuario) {
+    public ResponseEntity<UsuarioWeb> crearUsuario(@Valid @RequestBody UsuarioWeb usuario) {
         log.info("Creando usuario: {} {}", usuario.getNombre(), usuario.getApellido());
         usuario.setId(usuariosSimulados.size() + 1);
         usuariosSimulados.add(usuario);
@@ -24,13 +24,13 @@ public class UsuarioController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Usuario>> listarUsuarios() {
+    public ResponseEntity<List<UsuarioWeb>> listarUsuarios() {
         log.info("Listando todos los usuarios");
         return ResponseEntity.ok(usuariosSimulados);
     }
 
     @GetMapping("/{run}")
-    public ResponseEntity<Usuario> buscarPorRun(@PathVariable Integer run) {
+    public ResponseEntity<UsuarioWeb> buscarPorRun(@PathVariable Integer run) {
         log.info("Buscando usuario por RUN: {}", run);
         return usuariosSimulados.stream()
                 .filter(u -> u.getRun().equals(run))
