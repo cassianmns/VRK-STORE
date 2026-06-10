@@ -1,109 +1,39 @@
 {
 	"info": {
-		"_postman_id": "a1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c6d",
-		"name": "VRK API",
+		"_postman_id": "a1b2c3d4-e5f6-7a8b-9c0d-e1f2a3b4c5d6",
+		"name": "VRK Store",
+		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Prendas",
+			"name": "Autenticación",
 			"item": [
 				{
-					"name": "Listar Prendas",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8080/api/v1/prendas",
-							"protocol": "http",
-							"host": ["localhost"],
-							"port": "8080",
-							"path": ["api", "v1", "prendas"]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Buscar Prenda por ID",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8080/api/v1/prendas/1",
-							"protocol": "http",
-							"host": ["localhost"],
-							"port": "8080",
-							"path": ["api", "v1", "prendas", "1"]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Agregar Prenda",
+					"name": "Login Usuario",
 					"request": {
 						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"tipo\": \"Polera\",\n    \"estilo\": \"Anime\",\n    \"nombre\": \"Polera Jojo's\",\n    \"stock\": 10,\n    \"material\": \"Algodon\",\n    \"talla\": \"L\",\n    \"precio\": 9990,\n    \"color\": \"Negro\"\n}"
+							"raw": "{\n    \"username\": \"admin\",\n    \"password\": \"admin123\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/v1/prendas",
-							"protocol": "http",
-							"host": ["localhost"],
-							"port": "8080",
-							"path": ["api", "v1", "prendas"]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Usuarios",
-			"item": [
-				{
-					"name": "Listar Usuarios",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8080/api/v1/usuarios",
-							"protocol": "http",
-							"host": ["localhost"],
-							"port": "8080",
-							"path": ["api", "v1", "usuarios"]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Crear Usuario",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"nombre\": \"Josuke\",\n    \"apellido\": \"Higashikata\",\n    \"correo\": \"gappy.jojo@gmail.com\",\n    \"numeroCel\": 945299633,\n    \"run\": 21234567,\n    \"dv\": \"k\",\n    \"direccion\": \"Morioh\"\n}"
-						},
-						"url": {
-							"raw": "http://localhost:8080/api/v1/usuarios",
-							"protocol": "http",
-							"host": ["localhost"],
-							"port": "8080",
-							"path": ["api", "v1", "usuarios"]
+							"raw": "{{baseUrl}}/api/v1/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
 						}
 					},
 					"response": []
@@ -114,16 +44,78 @@
 			"name": "Carritos",
 			"item": [
 				{
-					"name": "Ver Detalle Carrito DTO",
+					"name": "Ver Detalle Carrito",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/carritos/1",
-							"protocol": "http",
-							"host": ["localhost"],
-							"port": "8080",
-							"path": ["api", "v1", "carritos", "1"]
+							"raw": "{{baseUrl}}/api/v1/carritos/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"carritos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vaciar Carrito",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/carritos/1/vaciar",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"carritos",
+								"1",
+								"vaciar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout Carrito",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/carritos/1/checkout",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"carritos",
+								"1",
+								"checkout"
+							]
 						}
 					},
 					"response": []
@@ -131,24 +123,275 @@
 			]
 		},
 		{
-			"name": "API Externa",
+			"name": "Prendas",
 			"item": [
 				{
-					"name": "Ejecutar API Externa",
+					"name": "Listar Prendas",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/vrk-api",
-							"protocol": "http",
-							"host": ["localhost"],
-							"port": "8080",
-							"path": ["api", "v1", "vrk-api"]
+							"raw": "{{baseUrl}}/api/v1/prendas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"prendas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Prenda por ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/prendas/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"prendas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agregar Nueva Prenda",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tipo\": \"Polera\",\n    \"estilo\": \"Anime\",\n    \"nombre\": \"Polera Jojo's Bizarre\",\n    \"stock\": 20,\n    \"material\": \"Algodón\",\n    \"talla\": \"XL\",\n    \"precio\": 9990,\n    \"color\": \"Negro\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/prendas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"prendas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Prenda",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tipo\": \"Polera\",\n    \"estilo\": \"Anime\",\n    \"nombre\": \"Polera Jojo's Overdrive\",\n    \"stock\": 15,\n    \"material\": \"Algodón Premium\",\n    \"talla\": \"XL\",\n    \"precio\": 10990,\n    \"color\": \"Morado\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/prendas/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"prendas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Prenda",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/prendas/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"prendas",
+								"1"
+							]
 						}
 					},
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Usuarios Web",
+			"item": [
+				{
+					"name": "Listar Usuarios",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/usuarios",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Usuario por RUN",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/usuarios/12345678",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"usuarios",
+								"12345678"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Usuario Web",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Jotaro\",\n    \"apellido\": \"Kujo\",\n    \"correo\": \"jotaro@starplatinum.com\",\n    \"numeroCel\": 987654321,\n    \"run\": 12345678,\n    \"dv\": \"K\",\n    \"direccion\": \"Av. Siempre Viva 742\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/usuarios",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "API Externa (VRK-API)",
+			"item": [
+				{
+					"name": "Ejecutar API Externa",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/vrk-api",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"vrk-api"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "TU_JWT_AQUI",
+			"type": "string"
 		}
 	]
 }
