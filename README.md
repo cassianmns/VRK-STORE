@@ -13,8 +13,12 @@ La aplicación funciona como el núcleo transaccional (Backend) para una platafo
 1.  **Gestión de Inventario (Prendas):** CRUD completo (Crear, Leer, Actualizar, Borrar) para el catálogo de ropa con especificaciones de tipo, estilo, material, stock, talla, precio y color.
 2.  **Gestión de Usuarios:** Registro y consulta de clientes utilizando validaciones de identidad (RUN, Dígito Verificador, correo electrónico, etc.).
 3.  **Lógica del Carrito de Compras:** Simulación del procesamiento de pedidos acoplando las entidades de Usuario y Prendas. Utiliza `CarritoDTO` para formatear y estructurar limpiamente las respuestas JSON hacia el cliente.
-4.  **Consumo de API Externa:** Implementación de un cliente web reactivo (`WebClient`) alojado en `ExternalMusicController` que consume de forma asíncrona un servicio REST en internet para simular la carga distribuidora de música [cite: 2026-03-25].
+4.  **Consumo de API Externa:** Implementación de un cliente web reactivo (`WebClient`) alojado en `ExternalVRKController` que consume de forma asíncrona un servicio REST en internet para simular la carga.
 5.  **Control Global de Excepciones:** Interceptor dinámico (`GlobalExceptionHandler`) que captura errores comunes (como validaciones fallidas `@Valid` o recursos no encontrados `404`) evitando el colapso del servidor y devolviendo un JSON limpio y estandarizado.
+6.  **Seguridad Robusta (Spring Security + JWT):** Implementación de autenticación y autorización basada en tokens JSON Web Tokens (JWT) para proteger los endpoints y gestionar accesos por roles (ej. ADMIN y CLIENTE).
+7.  **Documentación Interactiva (Swagger/OpenAPI):** Panel visual autogenerado mediante Swagger UI que permite explorar y probar todos los endpoints de la API en tiempo real directamente desde el navegador.
+8.  **Pruebas Unitarias Automatizadas:** Cobertura de la lógica de negocio y validaciones mediante tests unitarios integrados para asegurar la estabilidad del sistema.
+9.  **Contenedorización con Docker:** Configuración lista para compilar y desplegar la aplicación junto a la base de datos de manera ágil usando Docker y Docker Compose.
 
 ---
 
@@ -28,6 +32,20 @@ La API expone un total de **12 endpoints** clasificados en 4 módulos lógicos:
 * `PUT /api/v1/prendas/{id}` - Modifica los atributos de una prenda existente.
 * `DELETE /api/v1/prendas/{id}` - Remueve un artículo del inventario de forma permanente.
 
+## 📖 Documentación Interactiva con Swagger (OpenAPI)
+
+Para facilitar las pruebas y la exploración de la API sin necesidad de herramientas externas como Postman, el proyecto cuenta con **Swagger UI**.
+
+### 🌐 ¿Cómo acceder a la interfaz?
+Una vez que el servidor backend esté corriendo con éxito (`http://localhost:8080`), abre tu navegador web de preferencia e ingresa a la siguiente URL:
+* **Interfaz Gráfica (Swagger UI):** [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
+* **Documentación en formato JSON:** [http://localhost:8080/v3/api-docs](http://localhost:8080/v3/api-docs)
+
+### 🛠️ ¿Qué puedes hacer en Swagger UI?
+1. **Visualizar los Módulos:** Verás los controladores organizados limpiamente (Prendas, Usuarios, Carrito y Música).
+2. **Autenticación en Vivo:** Puedes ingresar el token generado en el login haciendo clic en el botón **"Authorize"** (icono de candado) para habilitar las peticiones protegidas.
+3. **Probar Endpoints en Vivo:** Al desplegar cualquier endpoint, puedes hacer clic en el botón **"Try it out"**, rellenar los parámetros o el JSON del cuerpo (Body) y presionar **"Execute"** para ver la respuesta real del servidor en tiempo real.
+
 ---
 
 ## ⚙️ Get Started
@@ -39,6 +57,7 @@ Asegúrate de tener instalado lo siguiente:
 * **Java Development Kit** Versión 17 o superior.
 * **XAMPP:** Para activar y administrar el servidor local de **MySQL** donde se guardarán los datos. 
 * **VS Code** con las extensiones de Java.
+* * **Docker y Docker Desktop** *(Opcional, solo si deseas desplegar en contenedores).*
 
 ### 🛠️ 1. Clonar el repositorio
 Abre tu terminal en VS Code (ctrl + ñ) y ejecuta los siguientes comandos:
@@ -94,10 +113,25 @@ Una vez que tengas MySQL encendido en XAMPP y la base de datos vrk creada, sigue
 ```bash
 [main] INFO  com.duoc.vrk.VrkApplication - Started VrkApplication in X.XXX seconds (JVM running for X.XX)
 ```
+### 🐳 4. Despliegue Alternativo con Docker (Opcional)
+Si prefieres no usar XAMPP ni configurar la base de datos a mano, puedes levantar todo el entorno empaquetado ejecutando el siguiente comando en la raíz del proyecto (donde se encuentra el archivo docker-compose.yml):
+```bash
+# Construir la aplicación e iniciar los contenedores de la API y MySQL
+docker-compose up --build
+Docker se encargará de descargar la imagen de MySQL, crear la base de datos vrk automáticamente y compilar el backend en un contenedor conectado en el puerto 8080.
+
+### 🧪 5. Ejecución de Pruebas Unitarias
+El proyecto viene equipado con un conjunto de pruebas automatizadas para verificar el correcto funcionamiento del carrito de compras y las reglas de negocio de las prendas. Para ejecutarlas, puedes abrir la terminal y escribir:
+```bash
+./mvnw test
+Esto correrá todos los tests unitarios y te mostrará el reporte de aprobación directamente en la consola.
 
 Y LISTO!! con eso la API está activa y ejecutándose en `http://localhost:8080` y las extensiones mencionadas al inicio del README en el apartado `Arquitectura de Endpoints`, puedes usar herramientas como Postman para interactuar con los endpoints del inventario y carritos.
 
---- Se debe importar el archivo `POSTMAN.json` en el programa POSTMAN y se visualizaran las distintas opciones a operar para seguidamente hacer click en Send y que se vea reflejado en el sistema.
+Para interactuar con el sistema puedes:
+* Utilizar la interfaz interactiva de **Swagger** directamente en tu navegador.
+* Importar el archivo `POSTMAN.json` adjunto en este repositorio dentro de la aplicación **Postman** y hacer clic en **Send** para operar los endpoints.
+
 
 ## 👥 Autores (Grupo de Trabajo)
 El desarrollo y diseño arquitectónico de este proyecto fue realizado por estudiantes de la carrera de Ingeniería en Informática de **Duoc UC (Sede San Joaquín)**:
