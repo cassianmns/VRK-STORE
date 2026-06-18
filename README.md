@@ -64,8 +64,8 @@ Abre tu terminal en VS Code (ctrl + ñ) y ejecuta los siguientes comandos:
 
 ```bash
 # Clona el repositorio
-https://github.com/cassianmns/VRK-STORE.git
-cd VRKSTORE
+git clone https://github.com/cassianmns/VRK-STORE.git
+cd VRK-STORE
 ```
 
 ### 🗄️ 2. Configuración y Despliegue de la Base de Datos (MySQL) con XAMPP
@@ -116,7 +116,7 @@ Una vez que tengas MySQL encendido en XAMPP y la base de datos vrk creada, sigue
 ### 🐳 4. Despliegue Alternativo con Docker (Opcional)
 Si prefieres no usar XAMPP ni configurar la base de datos a mano, puedes levantar todo el entorno empaquetado ejecutando el siguiente comando en la raíz del proyecto (donde se encuentra el archivo docker-compose.yml):
 ```bash
-# Construir la aplicación e iniciar los contenedores de la API y MySQL
+Construir la aplicación e iniciar los contenedores de la API y MySQL
 docker-compose up --build
 Docker se encargará de descargar la imagen de MySQL, crear la base de datos vrk automáticamente y compilar el backend en un contenedor conectado en el puerto 8080.
 
