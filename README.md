@@ -114,7 +114,7 @@ Una vez que tengas MySQL encendido en XAMPP y la base de datos vrk creada, sigue
 [main] INFO  com.duoc.vrk.VrkApplication - Started VrkApplication in X.XXX seconds (JVM running for X.XX)
 ```
 ### 🐳 4. Despliegue Alternativo con Docker (Opcional)
-Si prefieres no usar XAMPP ni configurar la base de datos a mano, puedes levantar todo el entorno empaquetado ejecutando el siguiente comando en la raíz del proyecto (donde se encuentra el archivo docker-compose.yml):
+Si prefieres no usar XAMPP ni configurar la base de datos a mano, puedes levantar todo el entorno empaquetado ejecutando el siguiente comando en la raíz del proyecto (donde se encuentra el archivo docker-compose.yml)
 ```bash
 Construir la aplicación e iniciar los contenedores de la API y MySQL
 docker-compose up --build
