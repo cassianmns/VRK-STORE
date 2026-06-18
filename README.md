@@ -126,6 +126,7 @@ Docker se encargará de descargar la imagen de MySQL, crear la base de datos vrk
 El proyecto viene equipado con un conjunto de pruebas automatizadas para verificar el correcto funcionamiento del carrito de compras y las reglas de negocio de las prendas. Para ejecutarlas, puedes abrir la terminal y escribir:
 ```bash
 ./mvnw test
+```
 Esto correrá todos los tests unitarios y te mostrará el reporte de aprobación directamente en la consola.
 
 Y LISTO!! con eso la API está activa y ejecutándose en `http://localhost:8080` y las extensiones mencionadas al inicio del README en el apartado `Arquitectura de Endpoints`, puedes usar herramientas como Postman para interactuar con los endpoints del inventario y carritos.
