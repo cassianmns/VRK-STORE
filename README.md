@@ -57,7 +57,7 @@ Asegúrate de tener instalado lo siguiente:
 * **Java Development Kit** Versión 17 o superior.
 * **XAMPP:** Para activar y administrar el servidor local de **MySQL** donde se guardarán los datos. 
 * **VS Code** con las extensiones de Java.
-* * **Docker y Docker Desktop** *(Opcional, solo si deseas desplegar en contenedores).*
+* **Docker y Docker Desktop** *(Opcional, solo si deseas desplegar en contenedores).*
 
 ### 🛠️ 1. Clonar el repositorio
 Abre tu terminal en VS Code (ctrl + ñ) y ejecuta los siguientes comandos:
