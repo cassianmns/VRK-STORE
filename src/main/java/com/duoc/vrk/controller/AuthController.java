@@ -52,7 +52,7 @@ public class AuthController {
         Usuario usuario = new Usuario();
         usuario.setUsername(request.getUsername());
         usuario.setPassword(passwordEncoder.encode(request.getPassword()));
-        usuario.setRole("ROLE_ADMIN");
+        usuario.setRole("ROLE_USER");
         usuarioRepository.save(usuario);
 
         return ResponseEntity.status(HttpStatus.CREATED).body("Usuario registrado exitosamente");
