@@ -55,9 +55,8 @@ Sigue estos pasos para clonar el proyecto, configurar la base de datos y ejecuta
 ### 📋 Prerrequisitos
 Asegúrate de tener instalado lo siguiente:
 * **Java Development Kit** Versión 17 o superior.
-* **XAMPP:** Para activar y administrar el servidor local de **MySQL** donde se guardarán los datos. 
 * **VS Code** con las extensiones de Java.
-* **Docker y Docker Desktop** *(Opcional, solo si deseas desplegar en contenedores).*
+* **Docker y Docker Desktop**
 
 ### 🛠️ 1. Clonar el repositorio
 Abre tu terminal en VS Code (ctrl + ñ) y ejecuta los siguientes comandos:
@@ -68,66 +67,50 @@ git clone https://github.com/cassianmns/VRK-STORE.git
 cd VRK-STORE
 ```
 
-### 🗄️ 2. Configuración y Despliegue de la Base de Datos (MySQL) con XAMPP
+### 🗄️ 2. Despligue con Dockler
 
-Este proyecto utiliza MySQL para guardar toda la información del inventario y los usuarios de la tienda de forma automática. Sigue estos pasos para dejar la base de datos lista:
+Docker se encarga de descargar la imagen de MySQL, crea la base de datos VRK automaticmante y compilar el backend de SpringBoot de manera aislada.
 
-1. **Activar el servidor local**
-* Abre el **XAMPP** y haz clic en el botón Start que está al lado del MySQL.
-* La base de datos debe estar en el puerto local estándar `3306`.
-
-2. **Conexión MySQL**
-Si utilizas **MySQL Workbench** para tu base de datos, debes rellenar los siguientes puntos:
-
-* **Connection Name:** El nombre que prefieras para identificarlo.
-* **Connection Method:** Standard (TCP/IP).
-* **Hostname:** 127.0.0.1
-* **Port:** 3306 (puerto por defecto de MySQL).
-* **Username:** root (usuario administrador predeterminado de XAMPP).
-* **Password:** Déjalo completamente vacío.
-
-3. **Crear la base de datos**
-* Abre tu terminal o consola de comandos conectada a MySQL.
-* Crea una nueva base de datos llamada `vrk` ejecutando la siguiente consulta:
+Para levantar todo el entorno, se ejecuta el siguiente comando en la raiz del proyecto. (docker-compose.yml):
 ```bash
-CREATE DATABASE vrk;
-```
-* Presiona el ícono del **rayo amarillo** en la barra superior para ejecutar el comando.
-
-### 🚀 3. Ejecución de la API en Visual Studio Code
-
-Una vez que tengas MySQL encendido en XAMPP y la base de datos vrk creada, sigue estos pasos para arrancar el backend:
-
-1. **Abrir el proyecto:** Abre visual studio y selecciona la opción `Abrir carpeta`. Selecciona la carpeta raíz del proyecto (VRKSTORE).
-
-2. **Cargar dependencias:** Espera unos segundos a que carguen los proyectos de java.
-
-3. **Ejecutar el servidor:** 
-    * En el explorador de archivos del lado izquierdo, busca la siguiente ruta: src --> main --> java --> com --> duoc --> vrk --> `VRKApplication.java`
-
-    * Abre ese archivo y veras que arriba de la linea `public static void main(String[] args)` hay una linea de codigo que dice **RUN | DEBUG**
-
-    * Haz clic en **RUN** (ejecutar).
-
-4. **Verificación:** Sabrás que esta corriendo con éxito el servidor cuando la terminal deje de cargar y veas un mensaje similar a: 
-```bash
-[main] INFO  com.duoc.vrk.VrkApplication - Started VrkApplication in X.XXX seconds (JVM running for X.XX)
-```
-### 🐳 4. Despliegue Alternativo con Docker (Opcional)
-Si prefieres no usar XAMPP ni configurar la base de datos a mano, puedes levantar todo el entorno empaquetado ejecutando el siguiente comando en la raíz del proyecto (donde se encuentra el archivo docker-compose.yml)
-
-Construir la aplicación e iniciar los contenedores de la API y MySQL
-```bash
-docker-compose up --build
+docker compose up -d --build
 ```
 Docker se encargará de descargar la imagen de MySQL, crear la base de datos vrk automáticamente y compilar el backend en un contenedor conectado en el puerto 8080.
 
-### 🧪 5. Ejecución de Pruebas Unitarias
+### 🌐 Servicios disponibles
+Una vez que los contenedores esten levantados, los siguientes servicios estaran listos para ser utilizados: 
+Api Rest (Spring boot) http://localhost:8080 
+Descripcion: 
+El núcleo transaccional de VRK-STORE.
+Swagger Ui http://localhost:8080/swagger-ui/index.html 
+Descripcion: 
+Panel interactivo para testear los endpoints en vivo.
+
+Comandos Utiles: 
+```bash
+# Apagar contenedores
+docker compose down
+```
+```bash
+# Ver Logs tiempo real
+docker compose logs -f
+```
+```bash
+# Recopilar el proyecto tras hacer cambios (reflejados)
+docker compose up -d --build
+```
+
+### 🧪 3. Ejecución de Pruebas Unitarias
 El proyecto viene equipado con un conjunto de pruebas automatizadas para verificar el correcto funcionamiento del carrito de compras y las reglas de negocio de las prendas. Para ejecutarlas, puedes abrir la terminal y escribir:
 ```bash
 ./mvnw test
 ```
 Esto correrá todos los tests unitarios y te mostrará el reporte de aprobación directamente en la consola.
+
+```bash
+# Ejecutar las cargas de prueba unitaria a traves de docker
+docker run --rm -v "${PWD}:/app" -w /app maven:3.9.9-eclipse-temurin-17 mvn test -Dtest=PrendaControllerTest
+```
 
 Y LISTO!! con eso la API está activa y ejecutándose en `http://localhost:8080` y las extensiones mencionadas al inicio del README en el apartado `Arquitectura de Endpoints`, puedes usar herramientas como Postman para interactuar con los endpoints del inventario y carritos.
 
