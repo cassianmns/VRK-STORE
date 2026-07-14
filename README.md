@@ -54,7 +54,7 @@ Sigue estos pasos para clonar el proyecto, configurar la base de datos y ejecuta
 
 ### 📋 Prerrequisitos
 Asegúrate de tener instalado lo siguiente:
-* **Java Development Kit** Versión 17 o superior.
+* **Java Development Kit** Versión 17.
 * **VS Code** con las extensiones de Java.
 * **Docker y Docker Desktop**
 
