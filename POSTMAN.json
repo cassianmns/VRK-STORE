@@ -39,6 +39,39 @@
                     "response": []
                 },
                 {
+                    "name": "Registrar Usuario Railway",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"username\": \"admin\",\n    \"password\": \"admin123\",\n    \"email\": \"admin@vrkstore.com\"\n}"
+                        },
+                        "url": {
+                            "raw": "https://vrk-production.up.railway.app/api/v1/auth/register",
+                            "protocol": "https",
+                            "host": [
+                                "vrk-production",
+                                "up",
+                                "railway",
+                                "app"
+                            ],
+                            "path": [
+                                "api",
+                                "v1",
+                                "auth",
+                                "register"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
                     "name": "Login Usuario",
                     "request": {
                         "method": "POST",
@@ -56,6 +89,39 @@
                             "raw": "{{baseUrl}}/api/v1/auth/login",
                             "host": [
                                 "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "v1",
+                                "auth",
+                                "login"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Login Usuario Railway",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"username\": \"admin\",\n    \"password\": \"admin123\"\n}"
+                        },
+                        "url": {
+                            "raw": "https://vrk-production.up.railway.app/api/v1/auth/login",
+                            "protocol": "https",
+                            "host": [
+                                "vrk-production",
+                                "up",
+                                "railway",
+                                "app"
                             ],
                             "path": [
                                 "api",
@@ -118,6 +184,35 @@
                     "response": []
                 },
                 {
+                    "name": "Ver Detalle Carrito Railway",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "https://vrk-production.up.railway.app/api/v1/carritos/1",
+                            "protocol": "https",
+                            "host": [
+                                "vrk-production",
+                                "up",
+                                "railway",
+                                "app"
+                            ],
+                            "path": [
+                                "api",
+                                "v1",
+                                "carritos",
+                                "1"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
                     "name": "Vaciar Carrito",
                     "request": {
                         "method": "POST",
@@ -144,6 +239,36 @@
                     "response": []
                 },
                 {
+                    "name": "Vaciar Carrito Railway",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "https://vrk-production.up.railway.app/api/v1/carritos/1/vaciar",
+                            "protocol": "https",
+                            "host": [
+                                "vrk-production",
+                                "up",
+                                "railway",
+                                "app"
+                            ],
+                            "path": [
+                                "api",
+                                "v1",
+                                "carritos",
+                                "1",
+                                "vaciar"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
                     "name": "Checkout Carrito",
                     "request": {
                         "method": "PUT",
@@ -157,6 +282,36 @@
                             "raw": "{{baseUrl}}/api/v1/carritos/1/checkout",
                             "host": [
                                 "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "v1",
+                                "carritos",
+                                "1",
+                                "checkout"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Checkout Carrito Railway",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "https://vrk-production.up.railway.app/api/v1/carritos/1/checkout",
+                            "protocol": "https",
+                            "host": [
+                                "vrk-production",
+                                "up",
+                                "railway",
+                                "app"
                             ],
                             "path": [
                                 "api",
@@ -199,6 +354,34 @@
                     "response": []
                 },
                 {
+                    "name": "Listar Prendas Railway",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "https://vrk-production.up.railway.app/api/v1/prendas",
+                            "protocol": "https",
+                            "host": [
+                                "vrk-production",
+                                "up",
+                                "railway",
+                                "app"
+                            ],
+                            "path": [
+                                "api",
+                                "v1",
+                                "prendas"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
                     "name": "Buscar Prenda por ID",
                     "request": {
                         "method": "GET",
@@ -212,6 +395,35 @@
                             "raw": "{{baseUrl}}/api/v1/prendas/1",
                             "host": [
                                 "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "v1",
+                                "prendas",
+                                "1"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Buscar Prenda por ID Railway",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "https://vrk-production.up.railway.app/api/v1/prendas/1",
+                            "protocol": "https",
+                            "host": [
+                                "vrk-production",
+                                "up",
+                                "railway",
+                                "app"
                             ],
                             "path": [
                                 "api",
@@ -241,6 +453,38 @@
                             "raw": "{{baseUrl}}/api/v1/prendas",
                             "host": [
                                 "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "v1",
+                                "prendas"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Agregar Nueva Prenda Railway",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"tipo\": \"Polera\",\n    \"estilo\": \"Anime\",\n    \"nombre\": \"Polera Jojo's Bizarre\",\n    \"stock\": 20,\n    \"material\": \"Algodón\",\n    \"talla\": \"XL\",\n    \"precio\": 9990,\n    \"color\": \"Negro\"\n}"
+                        },
+                        "url": {
+                            "raw": "https://vrk-production.up.railway.app/api/v1/prendas",
+                            "protocol": "https",
+                            "host": [
+                                "vrk-production",
+                                "up",
+                                "railway",
+                                "app"
                             ],
                             "path": [
                                 "api",
@@ -285,6 +529,43 @@
                     "response": []
                 },
                 {
+                    "name": "Actualizar Prenda Railway",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"tipo\": \"Polera\",\n    \"estilo\": \"Anime\",\n    \"nombre\": \"Polera Jojo's Overdrive\",\n    \"stock\": 15,\n    \"material\": \"Algodón Premium\",\n    \"talla\": \"XL\",\n    \"precio\": 10990,\n    \"color\": \"Morado\"\n}"
+                        },
+                        "url": {
+                            "raw": "https://vrk-production.up.railway.app/api/v1/prendas/1",
+                            "protocol": "https",
+                            "host": [
+                                "vrk-production",
+                                "up",
+                                "railway",
+                                "app"
+                            ],
+                            "path": [
+                                "api",
+                                "v1",
+                                "prendas",
+                                "1"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
                     "name": "Eliminar Prenda",
                     "request": {
                         "method": "DELETE",
@@ -298,6 +579,35 @@
                             "raw": "{{baseUrl}}/api/v1/prendas/1",
                             "host": [
                                 "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "v1",
+                                "prendas",
+                                "1"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Eliminar Prenda Railway",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "https://vrk-production.up.railway.app/api/v1/prendas/1",
+                            "protocol": "https",
+                            "host": [
+                                "vrk-production",
+                                "up",
+                                "railway",
+                                "app"
                             ],
                             "path": [
                                 "api",
@@ -339,6 +649,34 @@
                     "response": []
                 },
                 {
+                    "name": "Listar Usuarios Railway",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "https://vrk-production.up.railway.app/api/v1/usuarios",
+                            "protocol": "https",
+                            "host": [
+                                "vrk-production",
+                                "up",
+                                "railway",
+                                "app"
+                            ],
+                            "path": [
+                                "api",
+                                "v1",
+                                "usuarios"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
                     "name": "Buscar Usuario por RUN",
                     "request": {
                         "method": "GET",
@@ -352,6 +690,35 @@
                             "raw": "{{baseUrl}}/api/v1/usuarios/12345678",
                             "host": [
                                 "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "v1",
+                                "usuarios",
+                                "12345678"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Buscar Usuario por RUN Railway",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "https://vrk-production.up.railway.app/api/v1/usuarios/12345678",
+                            "protocol": "https",
+                            "host": [
+                                "vrk-production",
+                                "up",
+                                "railway",
+                                "app"
                             ],
                             "path": [
                                 "api",
@@ -394,6 +761,42 @@
                         }
                     },
                     "response": []
+                },
+                {
+                    "name": "Crear Usuario Web Railway",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"nombre\": \"Jotaro\",\n    \"apellido\": \"Kujo\",\n    \"correo\": \"jotaro@starplatinum.com\",\n    \"numeroCel\": 987654321,\n    \"run\": 12345678,\n    \"dv\": \"K\",\n    \"direccion\": \"Av. Siempre Viva 742\"\n}"
+                        },
+                        "url": {
+                            "raw": "https://vrk-production.up.railway.app/api/v1/usuarios",
+                            "protocol": "https",
+                            "host": [
+                                "vrk-production",
+                                "up",
+                                "railway",
+                                "app"
+                            ],
+                            "path": [
+                                "api",
+                                "v1",
+                                "usuarios"
+                            ]
+                        }
+                    },
+                    "response": []
                 }
             ]
         },
@@ -414,6 +817,34 @@
                             "raw": "{{baseUrl}}/api/v1/vrk-api",
                             "host": [
                                 "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "v1",
+                                "vrk-api"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Ejecutar API Externa Railway",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "https://vrk-production.up.railway.app/api/v1/vrk-api",
+                            "protocol": "https",
+                            "host": [
+                                "vrk-production",
+                                "up",
+                                "railway",
+                                "app"
                             ],
                             "path": [
                                 "api",
