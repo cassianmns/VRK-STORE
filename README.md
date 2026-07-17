@@ -112,6 +112,31 @@ Esto correrá todos los tests unitarios y te mostrará el reporte de aprobación
 docker run --rm -v "${PWD}:/app" -w /app maven:3.9.9-eclipse-temurin-17 mvn test -Dtest=PrendaControllerTest
 ```
 
+### 🎪 4. RailWay
+
+Ingresamos con la cuenta de Git en Railway, creamos un nuevo proyecto importando este repositorio en railway
+añadimos un servicio de base de datos, nos dirigimos a la pestaña variables y agregamos una, pegamos este codigo: 
+
+```bash
+SPRING_DATASOURCE_URL=jdbc:mysql://${{MySQL.MYSQLHOST}}:${{MySQL.MYSQLPORT}}/${{MySQL.MYSQLDATABASE}}?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+SPRING_DATASOURCE_USERNAME=${{MySQL.MYSQLUSER}}
+SPRING_DATASOURCE_PASSWORD=${{MySQL.MYSQLPASSWORD}}
+SPRING_JPA_HIBERNATE_DDL_AUTO=update
+JWT_SECRET=unaClaveSecretaSuperLargaYEspectacularDeMasDe32Caracteres
+```
+En el mismo Railway 
+en la pestaña de nuestro proyecto accedemos a settings, networking y luego generamos un dominio publico. 
+para acceder a los endpoints: 
+
+```bash
+#Usamos la URL: 
+vrk-production.up.railway.app
+```
+se mantienen los endpoints siguiendo la estructura y agregamos: 
+
+```bash
+https://vrk-production.up.railway.app/api/v1/
+```
 Y LISTO!! con eso la API está activa y ejecutándose en `http://localhost:8080` y las extensiones mencionadas al inicio del README en el apartado `Arquitectura de Endpoints`, puedes usar herramientas como Postman para interactuar con los endpoints del inventario y carritos.
 
 Para interactuar con el sistema puedes:
